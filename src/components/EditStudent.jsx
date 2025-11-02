@@ -56,7 +56,7 @@ function EditStudent() {
   // Fetch data from server for this ID
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/studentDetails/${id}`)
+      .get(`https://studentcrudbe.onrender.com/studentDetails/${id}`)
       .then((res) => {
         setFormData(res.data); // ✅ set form data once fetched
       })
@@ -75,7 +75,7 @@ function EditStudent() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:3000/studentDetails/${id}`, formData);
+      await axios.put(`https://studentcrudbe.onrender.com/studentDetails/${id}`, formData);
       navigate("/"); // redirect to home
     } catch (err) {
       console.error("Error updating student:", err);
